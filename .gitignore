@@ -183,5 +183,7 @@ node_modules
 psd
 thumb
 sketch
-
+lib
+.merlin
+.bsb.lock
 # End of https://www.toptal.com/developers/gitignore/api/node,react,macos
