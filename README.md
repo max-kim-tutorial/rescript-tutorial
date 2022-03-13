@@ -59,6 +59,27 @@ let myFun = (x, y) => {
 - React API들 호환
 - 함수형 컴포넌트와 훅으로 이루어짐
 
+### 빌드 과정, 빌드 결과물
+
+rescript 빌드 시스템
+
+- bsconfig.json으로 처리
+- JS로 빌드 : rescript build
+- rescript는 컴파일 단계만 처리한다. 하나의 파일을 하나의 자바스크립트로 만든다.
+- dev server사용하기: 데브서버를 제공하는 빌드툴과 함께 사용한다. 여기서는 parcel을 써본다(config할것이 없으므로) 먼저 rescript 빌드하고, 결과물을 한번더 번들링하는 느낌
+  - 코드 스플리팅 필요할땐 어떻게..?
+- rescript 빌드 결과물 : lib 폴더에 같이 제공되는데, ast등등 여러 부산물들과 함께 제공되는거 같은 느낌
+- stale build? 알아보기
+- 의존성, 고정 의존성
+  - bs-dependencies, bs-dev-dependencies: 리스크립트의 의존성 목록. package.json처럼 작동한다고 보면 되고, node_modules에서 찾는다. rescript용 모듈을 node_modules에 설치했을 때, 여기서도 표시를 해줘야한다.
+  - pinned-dependencies : 고정 의존성 목록. 고정 의존성은 rescript로 최상위 패키지를 빌드할때마다 항상 다시 빌드된다.
+    - 한개의 메인 프로젝트에 여러개의 독립적인 리스크립트 패키지를 연결하여 빌드하려는 상황에서 사용할 수 있다.
+    - 빌드를 시작하면, 최상위 패키지에서 빌드된 고정 의존성은 최종 앱에 반영된다.
+- 빌드 커맨드
+  - `rescript build -w` : 워치모드 빌드
+  - `rescript clean` : 프로젝트의 빌드 아티팩트 초기화
+  - `rescript build -with-deps` : 의존성의 아티팩트 초기화하여 빌드
+
 ## Rescript + React 문법
 
 ## Rescript(+Reason) 문법

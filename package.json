@@ -2,18 +2,20 @@
   "name": "rescript-todo",
   "version": "1.0.0",
   "description": "rescript tutorial",
-  "main": "index.js",
   "repository": "https://github.com/max-kim-tutorial/rescript-tutorial",
   "author": "Max Kim",
   "license": "MIT",
   "scripts": {
-    "re:build": "rescript",
-    "re:start": "rescript build -w"
+    "dev": "concurrently \"parcel ./public/index.html -p 3000\" \"rescript build -w\"",
+    "build": "rimraf dist && concurrently \"parcel build ./public/index.html\" \"rescript build -with-deps\""
   },
   "dependencies": {
     "@rescript/react": "^0.10.3",
+    "concurrently": "^7.0.0",
+    "parcel": "^2.3.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "rescript": "^9.1.4"
+    "rescript": "^9.1.4",
+    "rimraf": "^3.0.2"
   }
 }
