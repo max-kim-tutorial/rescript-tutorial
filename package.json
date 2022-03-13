@@ -1,0 +1,9 @@
+{
+  "name": "rescript-todo",
+  "version": "1.0.0",
+  "description": "rescript tutorial",
+  "main": "index.js",
+  "repository": "https://github.com/max-kim-tutorial/rescript-tutorial",
+  "author": "Max Kim",
+  "license": "MIT"
+}
