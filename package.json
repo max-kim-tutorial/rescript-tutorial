@@ -5,5 +5,15 @@
   "main": "index.js",
   "repository": "https://github.com/max-kim-tutorial/rescript-tutorial",
   "author": "Max Kim",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "re:build": "rescript",
+    "re:start": "rescript build -w"
+  },
+  "dependencies": {
+    "@rescript/react": "^0.10.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rescript": "^9.1.4"
+  }
 }
